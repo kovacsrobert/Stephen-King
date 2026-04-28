@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="stylus.css">
         <link rel="stylesheet" href="stylus_2.css">        
         <title>A tűzgyújtó</title>
+        <button id="dark-mode-toggle" class="nav-button">🌙 Sötét mód</button>
     </head>
     <body style="background-color: coral;">
             <div class="kartya_kozep">
@@ -5452,6 +5453,27 @@ STEPHEN KING
                 link.addEventListener('click', () => {
                     oldalsav.classList.remove('nyitva');
                  });
+            });
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+
+            // 1. Ellenőrizzük, hogy volt-e már elmentve a sötét mód
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = '☀️ Világos mód';
+            }
+
+            // 2. Kapcsoló eseménykezelő
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('dark-mode', 'enabled');
+                    darkModeToggle.textContent = '☀️ Világos mód';
+                } else {
+                    localStorage.setItem('dark-mode', 'disabled');
+                    darkModeToggle.textContent = '🌙 Sötét mód';
+                }
             });
         </script>
     </body>

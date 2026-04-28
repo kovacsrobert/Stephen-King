@@ -84,3 +84,21 @@
 html {
     scroll-behavior: smooth;
 }
+/* Sötét mód stílusai */
+body.dark-mode {
+    background-color: #1a1a1a; /* Mélyszürke háttér */
+    color: #e0e0e0;           /* Világosszürke szöveg */
+}
+
+body.dark-mode .kartya_normal_2 {
+    background-color: #2d2d2d; /* Sötétebb kártyák */
+    color: #ffffff;
+    border-color: #444;
+}
+
+/* Ha van oldalsávod, azt is sötétítsük el */
+body.dark-mode aside, 
+body.dark-mode .sticky-sidebar {
+    background-color: #252525;
+    color: #fff;
+}
