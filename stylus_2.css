@@ -102,3 +102,10 @@ body.dark-mode .sticky-sidebar {
     background-color: #252525;
     color: #fff;
 }
+.header-buttons {
+    display: flex;
+    justify-content: space-between; /* A két szélére rakja őket */
+    align-items: center;
+    padding: 10px;
+    gap: 10px; /* Legyen köztük egy kis távolság */
+}
